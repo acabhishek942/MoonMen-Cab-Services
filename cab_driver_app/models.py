@@ -9,8 +9,6 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 from datetime import date
 
-# django hosts --> subdomain for reverse
-
 class CabDriver(models.Model):
     first_name = models.CharField(max_length=120)
     last_name = models.CharField(max_length=120)
