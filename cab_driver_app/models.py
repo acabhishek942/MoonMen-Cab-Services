@@ -14,8 +14,8 @@ from datetime import date
 class CabDriver(models.Model):
     first_name = models.CharField(max_length=120)
     last_name = models.CharField(max_length=120)
-    birth_date = models.DateField(_("Birth-Date"), default=date.today)
-    driving_license_number = models.CharField(unique=True)
-    expiry_date = models.DateField(_("Expiry-Date"))
+    birth_date = models.DateField(default=date.today)
+    driving_license_number = models.CharField(max_length=20, unique=True)
+    expiry_date = models.DateField()
     status = models.BooleanField(default=True)
-    contact_number = PhoneNumberField(required=True)
+    contact_number = PhoneNumberField()

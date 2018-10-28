@@ -14,6 +14,6 @@ from datetime import date
 class CabUser(models.Model):
     first_name = models.CharField(max_length=120)
     last_name = models.CharField(max_length=120)
-    birth_date = models.DateField(_("Birth-Date"), default=date.today)
+    birth_date = models.DateField(default=date.today)
     status = models.BooleanField(default=True)
-    contact_number = PhoneNumberField(required=True)
+    contact_number = PhoneNumberField()
