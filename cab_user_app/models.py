@@ -17,3 +17,4 @@ class CabUser(models.Model):
     birth_date = models.DateField(default=date.today)
     status = models.BooleanField(default=True)
     contact_number = PhoneNumberField()
+    rating = models.FloatField(min_value=0, max_value=5)

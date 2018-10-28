@@ -19,3 +19,4 @@ class CabDriver(models.Model):
     expiry_date = models.DateField()
     status = models.BooleanField(default=True)
     contact_number = PhoneNumberField()
+    rating = models.FloatField(min_value=0, max_value=5)
