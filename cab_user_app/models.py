@@ -1,3 +1,19 @@
+from django.conf import settings
 from django.db import models
+from django.urls import reverse
 
-# Create your models here.
+from rest_framework.reverse import reverse as api_reverse
+
+from phonenumber_field.modelfields import PhoneNumberField
+
+
+from datetime import date
+
+# django hosts --> subdomain for reverse
+
+class CabUser(models.Model):
+    first_name = models.CharField(max_length=120)
+    last_name = models.CharField(max_length=120)
+    birth_date = models.DateField(_("Birth-Date"), default=date.today)
+    status = models.BooleanField(default=True)
+    contact_number = PhoneNumberField(required=True)

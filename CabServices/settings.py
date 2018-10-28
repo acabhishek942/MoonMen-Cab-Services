@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_google_maps',
     'django_extensions',
+    'phonenumber_field',
     
     'cab_user_app.apps.CabUserAppConfig',
     'cab_driver_app.apps.CabDriverAppConfig'
