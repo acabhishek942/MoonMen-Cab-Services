@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'django_google_maps',
     'django_extensions',
     'phonenumber_field',
-    
+    'geoposition',
+
     'cab_user_app.apps.CabUserAppConfig',
     'cab_driver_app.apps.CabDriverAppConfig'
 ]
@@ -139,3 +140,5 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
     ),
 }
+
+GEOPOSITION_GOOGLE_MAPS_API_KEY=''

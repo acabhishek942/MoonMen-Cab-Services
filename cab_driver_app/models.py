@@ -20,6 +20,7 @@ class CabDriver(models.Model):
     rating = models.FloatField()
     email=models.EmailField()
     deaf=models.BooleanField(default=False)
+    total_rides=models.IntegerField()
 
 class Cab(models.Model):#for now we are considering that cab driver is the owner of cab.
     license_plate=models.CharField(max_length=15)
@@ -29,3 +30,11 @@ class Cab(models.Model):#for now we are considering that cab driver is the owner
     driver=models.ForeignKey(CabDriver, on_delete=models.CASCADE, null=True)
     type=models.CharField(max_length=15)
     colour=models.CharField(max_length=20)
+
+class Shift(models.Model):
+    driver=models.ForeignKey(CabDriver, on_delete=models.CASCADE)
+    cab=models.ForeignKey(Cab, on_delete=models.CASCADE)
+    shift_start_time=models.DateTimeField()
+    shift_end_time=models.DateTimeField(null=True)
+    ongoing=models.BooleanField(default=True)
+    rides_completed=models.IntegerField(default=0)
