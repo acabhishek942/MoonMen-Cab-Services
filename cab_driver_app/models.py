@@ -17,4 +17,15 @@ class CabDriver(models.Model):
     expiry_date = models.DateField()
     status = models.BooleanField(default=True)
     contact_number = PhoneNumberField()
-    rating = models.FloatField(min_value=0, max_value=5)
+    rating = models.FloatField()
+    email=models.EmailField()
+    deaf=models.BooleanField(default=False)
+
+class Cab(models.Model):#for now we are considering that cab driver is the owner of cab.
+    license_plate=models.CharField(max_length=15)
+    manufacture_year=models.IntegerField()
+    status=models.BooleanField(default=False)
+    # driver will only be associated only when cab status is active
+    driver=models.ForeignKey(CabDriver, on_delete=models.CASCADE, null=True)
+    type=models.CharField(max_length=15)
+    colour=models.CharField(max_length=20)
